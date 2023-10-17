@@ -9,20 +9,20 @@ This project is a starting point for a megaApp app.
 A few resources to get you started if this is your first Flutter project:
 - https://google.com (Yeh I said it!, Google it)
 
-============================================
-Choose 1 AI companion to reduce confusion
 =====================================
+Choose 1 AI companion to reduce confusion
+============================================
 - https://bing.com (Bing AI)
 - https://chat.openai.com (ChatGPT)
 
-============================================
-Where to get upto date dependencies
 =====================================
+Where to get upto date dependencies
+============================================
 - https://pub.dev
 
-============================================
-Dev environment
 =====================================
+Dev environment
+============================================
 - VScode ( <200MB )
 - Gradle ( <1.2GB)
 - Java SE 18 ( <200MB)
@@ -32,9 +32,9 @@ Dev environment
 - Windows SDK ( <6GB)
 - Git/ Github ( <200MB)
 
-============================================
-Platform support
 =====================================
+Platform support
+============================================
 - Android = Full support
 - IOS = No support but has potential
 - Windows = Works but some features are disabled (settings)
