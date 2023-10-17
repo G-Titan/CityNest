@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class DynamicPage extends StatelessWidget {
   final List<Widget> childPages; // Add this line
 
-  DynamicPage({Key? key, required this.childPages}) : super(key: key); // Add this line
+  const DynamicPage({Key? key, required this.childPages}) : super(key: key); // Add this line
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class DynamicPage extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          const Text(
             'Dynamic Page',
             style: TextStyle(color: Colors.white),
           ),

@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 
 class Power extends StatelessWidget {
+  const Power({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -9,7 +11,7 @@ class Power extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
+          const Text(
             'Power Stone',
             style: TextStyle(
               color: Colors.white,
@@ -17,7 +19,7 @@ class Power extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           ElevatedButton(
             onPressed: () {
               showModalBottomSheet(
@@ -25,7 +27,7 @@ class Power extends StatelessWidget {
                 builder: (BuildContext context) {
                   return Container(
                     padding: const EdgeInsets.all(16),
-                    child: Column(
+                    child: const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
@@ -49,7 +51,7 @@ class Power extends StatelessWidget {
                 },
               );
             },
-            child: Text('Start'),
+            child: const Text('Start'),
           ),
         ],
       ),
