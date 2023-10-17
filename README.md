@@ -16,7 +16,7 @@ Choose 1 AI companion to reduce confusion
 - https://chat.openai.com (ChatGPT)
 
 =====================================
-Where to get upto date dependencies
+Where to get up-to date dependencies
 ============================================
 - https://pub.dev
 
