@@ -21,7 +21,7 @@ Where to get up-to date dependencies
 - https://pub.dev
 
 =====================================
-Dev environment
+Dev environment 4 windows
 ============================================
 - VScode. Download: https://az764295.vo.msecnd.net/stable/f1b07bd25dfad64b0167beb15359ae573aecd2cc/VSCodeUserSetup-x64-1.83.1.exe ( <200MB ) 
 - Gradle.  Download: https://downloads.gradle.org/distributions/gradle-8.4-bin.zip ( <150MB)
