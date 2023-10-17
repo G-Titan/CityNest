@@ -35,9 +35,9 @@ Dev environment
 ============================================
 Platform support
 ============================================
-Android = Full support
-IOS = No support but has potential
-Windows = Works but some features are disabled (settings)
-Web = No support
-MacOS = Havent tested, status unknown
-Linux = No support but has potential
+- Android = Full support
+- IOS = No support but has potential
+- Windows = Works but some features are disabled (settings)
+- Web = No support
+- MacOS = Havent tested, status unknown
+- Linux = No support but has potential
