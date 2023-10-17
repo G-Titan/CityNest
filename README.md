@@ -11,18 +11,18 @@ A few resources to get you started if this is your first Flutter project:
 
 ============================================
 Choose 1 AI companion to reduce confusion
-============================================
+=====================================
 - https://bing.com (Bing AI)
 - https://chat.openai.com (ChatGPT)
 
 ============================================
 Where to get upto date dependencies
-============================================
+=====================================
 - https://pub.dev
 
 ============================================
 Dev environment
-============================================
+=====================================
 - VScode ( <200MB )
 - Gradle ( <1.2GB)
 - Java SE 18 ( <200MB)
@@ -34,7 +34,7 @@ Dev environment
 
 ============================================
 Platform support
-============================================
+=====================================
 - Android = Full support
 - IOS = No support but has potential
 - Windows = Works but some features are disabled (settings)
