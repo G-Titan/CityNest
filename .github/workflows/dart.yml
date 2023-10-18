@@ -1,0 +1,26 @@
+name: CI/CD for Flutter
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Out Code
+        uses: actions/checkout@v2
+
+      - name: Set Up Flutter
+        uses: actions/setup-flutter@v3.13.7
+
+      - name: Install Dependencies
+        run: flutter pub get
+
+      - name: Build and Test
+        run: flutter test
+
+      - name: Build APK
+        run: flutter build apk
