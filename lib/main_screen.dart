@@ -1,9 +1,12 @@
 // main_screen.dart
+// ignore_for_file: library_private_types_in_public_api
+
 import 'dart:io' show Platform;
 import 'package:flutter/material.dart';
 import 'about_page.dart';
 import 'InfinityStones/power.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'media_page.dart';
 
 class MainScreen extends StatefulWidget {
   final Orientation orientation;
@@ -30,8 +33,8 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-    bool shouldShowSettingsButton =
-        Platform.isAndroid || Platform.isIOS; // Show button only on Android and iOS
+    bool shouldShowSettingsButton = Platform.isAndroid ||
+        Platform.isIOS; // Show button only on Android and iOS
 
     return Container(
       child: Scaffold(
@@ -74,7 +77,8 @@ class _MainScreenState extends State<MainScreen> {
                   ),
                   if (shouldShowSettingsButton)
                     ListTile(
-                      leading: const Icon(Icons.settings_suggest_outlined, color: Colors.white),
+                      leading: const Icon(Icons.settings_suggest_outlined,
+                          color: Colors.white),
                       title: const Text(
                         'Settings',
                         style: TextStyle(color: Colors.white),
@@ -106,22 +110,11 @@ class _MainScreenState extends State<MainScreen> {
           },
           children: [
             // Power Stone Page (Dynamic Page)
-            Power(),
+            const Power(),
 
             // Media Hub Page
-            Container(
-              padding: const EdgeInsets.all(16),
-              child: const Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Media Hub',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  // Add more widgets as needed
-                ],
-              ),
-            ),
+
+            const MediaPage(),
 
             // Settings Page
             Container(
@@ -165,7 +158,8 @@ class _MainScreenState extends State<MainScreen> {
                   initialChildSize: 0.9,
                   maxChildSize: 1,
                   minChildSize: 0.4,
-                  builder: (BuildContext context, ScrollController scrollController) {
+                  builder: (BuildContext context,
+                      ScrollController scrollController) {
                     return Container(
                       child: SingleChildScrollView(
                         controller: scrollController,
@@ -176,7 +170,8 @@ class _MainScreenState extends State<MainScreen> {
                             children: [
                               Center(
                                 child: Container(
-                                  margin: const EdgeInsets.symmetric(vertical: 16),
+                                  margin:
+                                      const EdgeInsets.symmetric(vertical: 16),
                                   width: 75,
                                   height: 75,
                                   child: Image.asset(
@@ -212,9 +207,11 @@ class _MainScreenState extends State<MainScreen> {
                                   alignment: Alignment.centerLeft,
                                   // ignore: deprecated_member_use
                                   child: TypewriterAnimatedTextKit(
-                                  repeatForever: false, // Set repeatForever to false
-                                  totalRepeatCount: 2,   // Set totalRepeatCount to 2
-                                  pause: const Duration(milliseconds: 500),
+                                    repeatForever:
+                                        false, // Set repeatForever to false
+                                    totalRepeatCount:
+                                        2, // Set totalRepeatCount to 2
+                                    pause: const Duration(milliseconds: 500),
                                     text: const [
                                       "",
                                       "I can read",
