@@ -110,7 +110,7 @@ class _MainScreenState extends State<MainScreen> {
           },
           children: [
             // Power Stone Page (Dynamic Page)
-            const Power(),
+            const POWER(),
 
             // Media Hub Page
 
