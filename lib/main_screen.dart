@@ -4,7 +4,7 @@
 import 'dart:io' show Platform;
 import 'package:flutter/material.dart';
 import 'about_page.dart';
-import 'InfinityStones/power.dart';
+import 'InfinityStones/POWER.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'media_page.dart';
 
@@ -110,7 +110,7 @@ class _MainScreenState extends State<MainScreen> {
           },
           children: [
             // Power Stone Page (Dynamic Page)
-            const POWER(),
+            const Power(),
 
             // Media Hub Page
 
