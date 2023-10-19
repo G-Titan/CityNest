@@ -33,7 +33,7 @@ class _MediaPageState extends State<MediaPage> {
           Container(
             margin: const EdgeInsets.only(top: 16),
             // You can replace this with your recommended list widget
-            child: Text(
+            child: const Text(
               'Recommended List',
               style: TextStyle(color: Colors.white),
             ),
@@ -47,7 +47,7 @@ class _MediaPageState extends State<MediaPage> {
     return Container(
       margin: const EdgeInsets.all(8),
       padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         shape: BoxShape.circle,
         color: Colors.black,
       ),

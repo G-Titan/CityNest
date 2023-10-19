@@ -64,8 +64,8 @@ class _MyBackgroundServiceState extends State<MyBackgroundService> {
       appBar: AppBar(
         title: const Text('Background Service Example'),
       ),
-      body: Center(
-        child: const Text('This is your main app UI'),
+      body: const Center(
+        child: Text('This is your main app UI'),
       ),
     );
   }
