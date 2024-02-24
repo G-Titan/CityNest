@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class DynamicPage extends StatelessWidget {
   final List<Widget> childPages; // Add this line
 
-  const DynamicPage({Key? key, required this.childPages}) : super(key: key); // Add this line
+  const DynamicPage({super.key, required this.childPages}); // Add this line
 
   @override
   Widget build(BuildContext context) {

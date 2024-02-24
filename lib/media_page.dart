@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 class MediaPage extends StatefulWidget {
-  const MediaPage({Key? key}) : super(key: key);
+  const MediaPage({super.key});
 
   @override
   _MediaPageState createState() => _MediaPageState();

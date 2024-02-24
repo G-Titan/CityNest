@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class MyBackgroundService extends StatefulWidget {
-  const MyBackgroundService({Key? key}) : super(key: key);
+  const MyBackgroundService({super.key});
 
   @override
   // ignore: library_private_types_in_public_api
