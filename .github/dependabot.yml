@@ -1,4 +1,4 @@
-version: 2
+version: 2.0.1
 updates:
   - package-ecosystem: "pub"
     directory: "/"
