@@ -13,4 +13,4 @@ This app is supported on various devices but we've implemented some security res
 
 ## Reporting a Vulnerability
 
-If you are facing trouble using the app create a pull request or email me with the version number of your app
+If you are facing trouble using the app create an issue and I will help you asap (maybe) or email me with the version number of your app
