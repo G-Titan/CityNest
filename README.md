@@ -1,4 +1,4 @@
-# cityNest
+# CityNest
 
 Designed out of boredom, my heart yearns for more with each line of code😪....
 Anyway
