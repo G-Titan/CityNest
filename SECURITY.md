@@ -2,8 +2,7 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+This app is supported on various devices but we've implemented some security restrictions to allow only android to work
 
 | Version | Supported          |
 | ------- | ------------------ |
@@ -14,8 +13,4 @@ currently being supported with security updates.
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
-
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+If you are facing trouble using the app create a pull request or email me with the version number of your app
