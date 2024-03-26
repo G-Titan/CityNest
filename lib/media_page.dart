@@ -34,7 +34,7 @@ class _MediaPageState extends State<MediaPage> {
             margin: const EdgeInsets.only(top: 16),
             // You can replace this with your recommended list widget
             child: const Text(
-              'Recommended List',
+              'Subscribe to connect Spotify (P20/2wks)',
               style: TextStyle(color: Colors.white),
             ),
           ),

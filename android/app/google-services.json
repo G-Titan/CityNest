@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "215867759293",
+    "project_id": "citynest-e6393",
+    "storage_bucket": "citynest-e6393.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:215867759293:android:598f4db85144a43378f5d4",
+        "android_client_info": {
+          "package_name": "com.example.citynest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAQS-ZiDlunmlbQ1Jz8xUw6D4zYhc6dgk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

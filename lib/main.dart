@@ -1,4 +1,3 @@
-// main.dart
 import 'package:flutter/material.dart';
 import 'main_screen.dart';
 
@@ -7,7 +6,7 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,13 +14,12 @@ class MyApp extends StatelessWidget {
       title: 'InfinityStones',
       theme: ThemeData(
         primarySwatch: Colors.purple,
+        scaffoldBackgroundColor:
+            Colors.black, // Set scaffold background to black
+        canvasColor: Colors.black, // Set canvas color to black
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: OrientationBuilder(
-        builder: (context, orientation) {
-          return MainScreen(orientation: orientation);
-        },
-      ),
+      home: const MainScreen(),
     );
   }
 }
