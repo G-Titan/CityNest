@@ -39,6 +39,7 @@ dependencies:
   connectivity_plus: ^6.0.1
 
   firebase_core: any
+  firebase_auth: ^4.19.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
