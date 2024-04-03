@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'about_page.dart';
-import 'InfinityStones/POWER.dart';
+import 'conf/disndat.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'media_page.dart';
 
@@ -48,7 +48,8 @@ class _MainScreenState extends State<MainScreen> {
             child: Column(
               children: [
                 ListTile(
-                  leading: const Icon(Icons.home, color: Colors.white),
+                  leading: const Icon(Icons.menu,
+                      color: Colors.white), // Change color to white
                   title: const Text(
                     'Portal',
                     style: TextStyle(color: Colors.white),
@@ -101,7 +102,10 @@ class _MainScreenState extends State<MainScreen> {
           // Handle page change if needed
         },
         children: [
-          const Power(),
+          // Authenticator 1st
+          const CloudSync(),
+
+          // Media playback
           const MediaPage(),
           Container(
             padding: const EdgeInsets.all(16),

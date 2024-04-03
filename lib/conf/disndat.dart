@@ -1,19 +1,20 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:citynest/conf/CloudSync.dart';
 import 'package:citynest/firebase_options.dart';
-import 'package:flutter/foundation.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-class Power extends StatefulWidget {
-  const Power({Key? key}) : super(key: key);
+class CloudSync extends StatefulWidget {
+  const CloudSync({Key? key}) : super(key: key);
 
   @override
-  _PowerState createState() => _PowerState();
+  // ignore: library_private_types_in_public_api
+  _CloudSyncState createState() => _CloudSyncState();
 }
 
-class _PowerState extends State<Power> {
+class _CloudSyncState extends State<CloudSync> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool isRegisterMode = true;
@@ -32,7 +33,7 @@ class _PowerState extends State<Power> {
       await Firebase.initializeApp(
         options: DefaultFirebaseOptions.currentPlatform,
       );
-      print('Rolling a joint');
+      //print('Rolling a joint');
     }
   }
 
@@ -133,7 +134,7 @@ class _PowerState extends State<Power> {
                                           TextFormField(
                                             controller: _emailController,
                                             decoration: const InputDecoration(
-                                              labelText: 'Username',
+                                              labelText: 'Email/ Username',
                                               labelStyle: TextStyle(
                                                   color: Colors.white),
                                               border: OutlineInputBorder(),
@@ -211,6 +212,9 @@ class _PowerState extends State<Power> {
                                                 CloudSettings.signInUser(
                                                     context, email, password);
                                               }
+                                              //if (condition) {
+
+                                              //} else {}
                                             },
                                             style: ElevatedButton.styleFrom(
                                               backgroundColor: Colors.purple,
