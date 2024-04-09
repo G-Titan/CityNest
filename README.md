@@ -62,6 +62,7 @@ Moving on...
 😩
 verified?
 trying again
+YES! now vscode side?
 ============================================
 App progress/ Highlights
 ============================================
