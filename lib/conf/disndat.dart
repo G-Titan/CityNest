@@ -1,13 +1,13 @@
 // ignore: file_names
+// ignore_for_file: library_private_types_in_public_api, camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:citynest/conf/CloudSync.dart';
 import 'package:citynest/firebase_options.dart';
-import 'package:flutter/foundation.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class disndat extends StatefulWidget {
-  const disndat({Key? key}) : super(key: key);
+  const disndat({super.key});
 
   @override
   _disndatState createState() => _disndatState();
