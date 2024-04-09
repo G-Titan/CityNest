@@ -4,7 +4,6 @@ import 'package:citynest/conf/persona.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:citynest/life/POWER.dart';
-//import 'package:citynest/conf/persona.dart';
 import 'package:citynest/main_screen.dart'; //Unused import for logout scenarios
 
 /*NOTES
