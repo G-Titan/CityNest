@@ -55,6 +55,9 @@ Platform support
 - MacOS = Havent tested, status unknown
 - Linux = No support but has potential
 
+tbh damn i do be cooking something on an individual level
+fascinating.  but some help would be nice.
+
 ============================================
 App progress/ Highlights
 ============================================
