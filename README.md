@@ -58,6 +58,8 @@ Platform support
 tbh damn i do be cooking something on an individual level
 fascinating.  but some help would be nice.
 
+Moving on...
+
 ============================================
 App progress/ Highlights
 ============================================
