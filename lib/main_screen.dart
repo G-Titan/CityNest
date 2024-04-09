@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'about_page.dart';
-import 'InfinityStones/POWER.dart';
+import 'package:citynest/conf/disndat.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'media_page.dart';
 
@@ -101,7 +101,7 @@ class _MainScreenState extends State<MainScreen> {
           // Handle page change if needed
         },
         children: [
-          const Power(),
+          const disndat(),
           const MediaPage(),
           Container(
             padding: const EdgeInsets.all(16),

@@ -6,34 +6,24 @@ import 'package:flutter/foundation.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-class Power extends StatefulWidget {
-  const Power({Key? key}) : super(key: key);
+class disndat extends StatefulWidget {
+  const disndat({Key? key}) : super(key: key);
 
   @override
-  _PowerState createState() => _PowerState();
+  _disndatState createState() => _disndatState();
 }
 
-class _PowerState extends State<Power> {
+class _disndatState extends State<disndat> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool isRegisterMode = true;
 
   //initializes firebase
   // ignore: non_constant_identifier_names
-  void FirePower() async {
-    if (kDebugMode) {
-      await Firebase.initializeApp(
-        options: DefaultFirebaseOptions.currentPlatform,
-      );
-      print('Debug mode enabled, activating God mode');
-      //  Ideal time to launch emulator
-      await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
-    } else {
-      await Firebase.initializeApp(
-        options: DefaultFirebaseOptions.currentPlatform,
-      );
-      print('Rolling a joint');
-    }
+  void Firedisndat() async {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
   }
 
   // Function to handle refresh action
@@ -65,7 +55,7 @@ class _PowerState extends State<Power> {
                 const SizedBox(height: 16),
                 ElevatedButton(
                   onPressed: () {
-                    FirePower();
+                    Firedisndat();
                     showDialog(
                       context: context,
                       builder: (BuildContext context) {
@@ -199,7 +189,7 @@ class _PowerState extends State<Power> {
                                                 String password =
                                                     _passwordController.text
                                                         .trim();
-                                                CloudSettings.registerUser(
+                                                CloudSync.registerUser(
                                                     context, email, password);
                                               } else {
                                                 String email = _emailController
@@ -208,7 +198,7 @@ class _PowerState extends State<Power> {
                                                 String password =
                                                     _passwordController.text
                                                         .trim();
-                                                CloudSettings.signInUser(
+                                                CloudSync.signInUser(
                                                     context, email, password);
                                               }
                                             },
