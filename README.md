@@ -59,10 +59,14 @@ tbh damn i do be cooking something on an individual level
 fascinating.  but some help would be nice.
 
 Moving on...
-😩
-verified?
-trying again
+
+
+verified check?
+Kinda failed there, trying again
 YES! now vscode side?
+BadaBOOM BadaBANG the shoe fits
+
+
 ============================================
 App progress/ Highlights
 ============================================
