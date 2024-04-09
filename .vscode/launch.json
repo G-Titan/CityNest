@@ -2,18 +2,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "CityNest",
+            "name": "citynest",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "CityNest (profile mode)",
+            "name": "citynest (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "CityNest (release mode)",
+            "name": "citynest (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

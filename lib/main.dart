@@ -1,4 +1,3 @@
-// main.dart
 import 'package:flutter/material.dart';
 import 'main_screen.dart';
 
@@ -12,16 +11,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'InfinityStones',
+      title: 'Godly\'s Touch',
       theme: ThemeData(
         primarySwatch: Colors.purple,
+        scaffoldBackgroundColor:
+            Colors.black, // Set scaffold background to black
+        canvasColor: Colors.black, // Set canvas color to black
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: OrientationBuilder(
-        builder: (context, orientation) {
-          return MainScreen(orientation: orientation);
-        },
-      ),
+      home: const MainScreen(),
     );
   }
 }
