@@ -1,10 +1,10 @@
-// ignore: file_names
-// ignore_for_file: use_build_context_synchronously
+// ignore_for_file: use_build_context_synchronously, file_names
 
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:citynest/Life/POWER.dart';
 import 'package:citynest/conf/persona.dart';
+import 'package:citynest/main_screen.dart'; //Unused import for logout scenarios
 
 /*NOTES
  THESE COMMENTED IMPORTS CONTRIBUTE TO INITIALIZING FIREBASE, it
@@ -16,29 +16,64 @@ import 'package:citynest/conf/persona.dart';
 //import 'package:citynest/firebase_options.dart';
 //import 'package:firebase_core/firebase_core.dart';
 
-class CloudSettings {
+class CloudSync {
   static final FirebaseAuth _auth = FirebaseAuth.instance;
 
-//static Future<void> SparkABlunt() async {
-//  await Firebase.initializeApp(
-//    options: DefaultFirebaseOptions.currentPlatform,
-//  );
-//  Ideal time to initialize emulator
-//  await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
-//}
-/* The commented code above should be placed elsewhere before using the uncommented code below
- it is part of the auth flow */
+  // Function to handle authentication state changes
+  static void authenticationState(BuildContext context) {
+    FirebaseAuth.instance.authStateChanges().listen((User? user) {
+      if (user == null) {
+        print('User is currently signed out!');
+        // Perform any actions needed when the user is signed out
+        // Navigate to the main screen after successful sign-out
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => const MainScreen()),
+        );
+      } else {
+        print('User is signed in!');
+        // Perform any actions needed when the user is signed in
+        // Navigate after success
+        Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (context) => const Power()));
+      }
+    });
+  }
+
+  static Future<void> signOut(BuildContext context) async {
+    try {
+      await _auth.signOut();
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('User signed out successfully'),
+          duration: Duration(seconds: 5),
+        ),
+      );
+      // Navigate to the main screen after successful sign-out
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => const MainScreen()),
+      );
+    } catch (e) {
+      print('Error signing out: $e');
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('An error occurred while signing out'),
+          duration: Duration(seconds: 5),
+        ),
+      );
+    }
+  }
+
   static String _getFriendlyErrorMessage(FirebaseAuthException e) {
     if (e.code == 'weak-password') {
-      return 'The password provided is too weak.';
+      return 'Use a stronger password.';
     } else if (e.code == 'email-already-in-use') {
-      return 'Email already exists, log in instead.';
+      return 'I know this email, try login instead.';
     } else if (e.code == 'user-not-found') {
-      return 'Email not registered/ account doesnt exist';
+      return 'I don\'t know that email, Register instead.';
     } else if (e.code == 'wrong-password') {
-      return 'Wrong password, try again.';
+      return 'Password incorrect, try a different one.';
     } else {
-      return 'An unexpected error occurred. Please try again.';
+      return 'Check your login information or internet & try again.';
     }
   }
 
@@ -50,7 +85,7 @@ class CloudSettings {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
             content: Text('User registration successful'),
-            duration: Duration(seconds: 5)),
+            duration: Duration(seconds: 7)),
       );
       // Navigate after success
       Navigator.of(context).pushReplacement(
@@ -61,7 +96,7 @@ class CloudSettings {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
               content: Text(friendlyMessage),
-              duration: const Duration(seconds: 7)),
+              duration: const Duration(seconds: 6)),
         );
       }
     }
@@ -73,12 +108,12 @@ class CloudSettings {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-            content: Text('User sign-in successful'),
+            content: Text('sign-in successful'),
             duration: Duration(seconds: 5)),
       );
       // Navigate after success
-      Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (context) => Power()));
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => const Power()));
     } catch (e) {
       if (e is FirebaseAuthException) {
         final friendlyMessage = _getFriendlyErrorMessage(e);

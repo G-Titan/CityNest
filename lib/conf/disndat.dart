@@ -1,20 +1,20 @@
 // ignore: file_names
-import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
+// ignore_for_file: camel_case_types
+
 import 'package:citynest/conf/CloudSync.dart';
+import 'package:flutter/material.dart';
 import 'package:citynest/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
-class CloudSync extends StatefulWidget {
-  const CloudSync({Key? key}) : super(key: key);
+class disndat extends StatefulWidget {
+  const disndat({super.key});
 
   @override
   // ignore: library_private_types_in_public_api
-  _CloudSyncState createState() => _CloudSyncState();
+  _disndatState createState() => _disndatState();
 }
 
-class _CloudSyncState extends State<CloudSync> {
+class _disndatState extends State<disndat> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool isRegisterMode = true;
@@ -22,19 +22,12 @@ class _CloudSyncState extends State<CloudSync> {
   //initializes firebase
   // ignore: non_constant_identifier_names
   void FirePower() async {
-    if (kDebugMode) {
-      await Firebase.initializeApp(
-        options: DefaultFirebaseOptions.currentPlatform,
-      );
-      print('Debug mode enabled, activating God mode');
-      //  Ideal time to launch emulator
-      await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
-    } else {
-      await Firebase.initializeApp(
-        options: DefaultFirebaseOptions.currentPlatform,
-      );
-      //print('Rolling a joint');
-    }
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+    // print('Debug mode enabled, activating God mode');
+    //  Ideal time to launch emulator
+    // await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
   }
 
   // Function to handle refresh action
@@ -134,7 +127,7 @@ class _CloudSyncState extends State<CloudSync> {
                                           TextFormField(
                                             controller: _emailController,
                                             decoration: const InputDecoration(
-                                              labelText: 'Email/ Username',
+                                              labelText: 'Email/ Number',
                                               labelStyle: TextStyle(
                                                   color: Colors.white),
                                               border: OutlineInputBorder(),
@@ -200,7 +193,7 @@ class _CloudSyncState extends State<CloudSync> {
                                                 String password =
                                                     _passwordController.text
                                                         .trim();
-                                                CloudSettings.registerUser(
+                                                CloudSync.registerUser(
                                                     context, email, password);
                                               } else {
                                                 String email = _emailController
@@ -209,7 +202,7 @@ class _CloudSyncState extends State<CloudSync> {
                                                 String password =
                                                     _passwordController.text
                                                         .trim();
-                                                CloudSettings.signInUser(
+                                                CloudSync.signInUser(
                                                     context, email, password);
                                               }
                                               //if (condition) {
