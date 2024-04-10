@@ -39,7 +39,7 @@ dependencies:
   connectivity_plus: ^5.0.2
 
   firebase_core: any
-  firebase_auth: ^4.19.0
+  firebase_auth: ^4.19.1
   google_fonts: ^6.2.1
 dev_dependencies:
   flutter_test:
