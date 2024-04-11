@@ -1,6 +1,5 @@
 // ignore: file_names
 // ignore_for_file: library_private_types_in_public_api, camel_case_types
-
 import 'package:flutter/material.dart';
 import 'package:citynest/conf/CloudSync.dart';
 import 'package:citynest/firebase_options.dart';
@@ -189,7 +188,7 @@ class _disndatState extends State<disndat> {
                                                 String password =
                                                     _passwordController.text
                                                         .trim();
-                                                CloudSync.registerUser(
+                                                CloudSync.registerUserBasic(
                                                     context, email, password);
                                               } else {
                                                 String email = _emailController

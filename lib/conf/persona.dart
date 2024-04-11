@@ -1,6 +1,8 @@
 // ignore: file_names
 // ignore_for_file: library_private_types_in_public_api
 
+import 'package:citynest/conf/CloudSync.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Persona extends StatefulWidget {
@@ -170,18 +172,33 @@ class _PersonaState extends State<Persona> {
                 ElevatedButton(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      // If the form is valid, submit the data.
-                      // You can process the data here as per your requirement
-                      // For example, you can print the values of the fields
-                      print('Name: ${_nameController.text}');
-                      print('Surname: ${_surnameController.text}');
-                      print('Age: ${_ageController.text}');
-                      print('ID Number: ${_idNumberController.text}');
-                      print('Home Address: ${_homeAddressController.text}');
-                      print('Phone Number: ${_phoneNumberController.text}');
-                      print('Citizenship: ${_citizenshipController.text}');
-                      print('Gender: ${_isMale ? 'Male' : 'Female'}');
-                      print('Birthday: $_selectedDate');
+                      // Extract user data from the form fields
+                      String name = _nameController.text;
+                      String surname = _surnameController.text;
+                      int age = int.parse(_ageController.text);
+                      String idNumber = _idNumberController.text;
+                      String homeAddress = _homeAddressController.text;
+                      String phoneNumber = _phoneNumberController.text;
+                      String citizenship = _citizenshipController.text;
+                      String gender = _isMale ? 'Male' : 'Female';
+                      String birthDate = _selectedDate != null
+                          ? '${_selectedDate!.year}-${_selectedDate!.month}-${_selectedDate!.day}'
+                          : '';
+
+                      // Call CloudSync method to register user details
+                      CloudSync.registerUserDetails(
+                        context,
+                        FirebaseAuth.instance.currentUser!.uid,
+                        name,
+                        surname,
+                        age,
+                        idNumber,
+                        homeAddress,
+                        phoneNumber,
+                        citizenship,
+                        gender,
+                        birthDate,
+                      );
                     }
                   },
                   child: const Text('Submit'),

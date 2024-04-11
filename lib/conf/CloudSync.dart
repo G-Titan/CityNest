@@ -1,6 +1,7 @@
 // ignore_for_file: use_build_context_synchronously, file_names
 
 import 'package:citynest/conf/persona.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:citynest/life/POWER.dart';
@@ -18,6 +19,7 @@ import 'package:citynest/main_screen.dart'; //Unused import for logout scenarios
 
 class CloudSync {
   static final FirebaseAuth _auth = FirebaseAuth.instance;
+  static final FirebaseDatabase _database = FirebaseDatabase.instance;
 
   // Function to handle authentication state changes
   static void authenticationState(BuildContext context) {
@@ -77,11 +79,13 @@ class CloudSync {
     }
   }
 
-  static Future<void> registerUser(
+  // Function for basic user registration with email and password
+  static Future<void> registerUserBasic(
       BuildContext context, String email, String password) async {
     try {
-      await _auth.createUserWithEmailAndPassword(
-          email: email, password: password);
+      UserCredential userCredential = await _auth
+          .createUserWithEmailAndPassword(email: email, password: password);
+      String userId = userCredential.user!.uid; // Obtain Firebase Auth UID
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
             content: Text('User registration successful'),
@@ -99,6 +103,61 @@ class CloudSync {
               duration: const Duration(seconds: 6)),
         );
       }
+    }
+  }
+// This would ideally be called after the basic registration, passing Firebase Auth's UID as userId
+
+  static void registerUserDetails(
+      BuildContext context,
+      String userId,
+      String name,
+      String surname,
+      int age,
+      String idNumber,
+      String homeAddress,
+      String phoneNumber,
+      String citizenship,
+      String gender,
+      String birthDate) {
+    try {
+      // Reference to the user's node in the database
+      DatabaseReference userRef = _database
+          .ref()
+          .child('users')
+          .child(userId); // Reference to the user's node in the database
+
+      // Push user details to the database
+      userRef.set({
+        'name': name,
+        'surname': surname,
+        'age': age,
+        'idNumber': idNumber,
+        'homeAddress': homeAddress,
+        'phoneNumber': phoneNumber,
+        'citizenship': citizenship,
+        'gender': gender,
+        'birthDate': birthDate,
+      });
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('User registration successful'),
+          duration: Duration(seconds: 7),
+        ),
+      );
+
+      // Optionally, navigate to the next screen after successful registration
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => const Power()),
+      );
+    } catch (e) {
+      print('Error registering user details: $e');
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('An error occurred while registering user details'),
+          duration: Duration(seconds: 5),
+        ),
+      );
     }
   }
 
