@@ -39,9 +39,9 @@ dependencies:
   connectivity_plus: ^6.0.3
 
   firebase_core: any
-  firebase_auth: ^4.19.2
+  firebase_auth: ^4.20.0
   google_fonts: ^6.2.1
-  firebase_database: ^10.5.2
+  firebase_database: ^10.5.7
 dev_dependencies:
   flutter_test:
     sdk: flutter
